@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forex Direction Checker</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Popup Reminder -->
+  <div id="popup" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reminder</h5>
+          <button type="button" class="close" onclick="closePopup()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Please divide your screen into two halves:</p>
+          <ul>
+            <li>Left: Set Tradingview to <strong>Weekly</strong>.</li>
+            <li>Right: Set it to <strong>1 Hour</strong> with either a Moving Average or Bollinger Band applied.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="closePopup()">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Forex Direction Checker</h1>
+    <form id="forex-form" class="card p-4 shadow">
+      <div class="form-group">
+        <label for="currency-pair">Select Currency Pair:</label>
+        <select class="form-control" id="currency-pair">
+          <option value="">Select Pair</option>
+          <option value="eurusd">EUR/USD</option>
+          <option value="gbpusd">GBP/USD</option>
+          <option value="usdjpy">USD/JPY</option>
+          <option value="audusd">AUD/USD</option>
+          <option value="usdcad">USD/CAD</option>
+          <option value="usdchf">USD/CHF</option>
+          <option value="nzdusd">NZD/USD</option>
+          <option value="eurgbp">EUR/GBP</option>
+          <option value="eurchf">EUR/CHF</option>
+          <option value="eurjpy">EUR/JPY</option>
+          <option value="eurcad">EUR/CAD</option>
+          <option value="euraud">EUR/AUD</option>
+          <option value="eurnzd">EUR/NZD</option>
+          <option value="gbpjpy">GBP/JPY</option>
+          <option value="gbpaud">GBP/AUD</option>
+          <option value="gbpcad">GBP/CAD</option>
+          <option value="gbpnzd">GBP/NZD</option>
+          <option value="audjpy">AUD/JPY</option>
+          <option value="audcad">AUD/CAD</option>
+          <option value="audchf">AUD/CHF</option>
+          <option value="audnzd">AUD/NZD</option>
+          <option value="cadchf">CAD/CHF</option>
+          <option value="cadjpy">CAD/JPY</option>
+          <option value="chfjpy">CHF/JPY</option>
+          <option value="nzdchf">NZD/CHF</option>
+          <option value="nzdjpy">NZD/JPY</option>
+          <option value="usdzar">USD/ZAR</option>
+          <option value="usdmxn">USD/MXN</option>
+          <option value="usdtry">USD/TRY</option>
+          <option value="usdsgd">USD/SGD</option>
+          <option value="usdhkd">USD/HKD</option>
+          <option value="usdnok">USD/NOK</option>
+          <option value="usdsek">USD/SEK</option>
+          <option value="usddkk">USD/DKK</option>
+          <option value="usdpln">USD/PLN</option>
+          <option value="usdczk">USD/CZK</option>
+          <option value="usdhuf">USD/HUF</option>
+          <option value="usdrub">USD/RUB</option>
+          <option value="usdils">USD/ILS</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="hour-direction">1-Hour Direction:</label>
+        <select class="form-control" id="hour-direction">
+          <option value="">Select Direction</option>
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="week-direction">Weekly or Monthly Direction:</label>
+        <select class="form-control" id="week-direction">
+          <option value="">Select Direction</option>
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" onclick="checkDirections()">Check Directions</button>
+    </form>
+    <div id="result" class="mt-4 text-center"></div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
