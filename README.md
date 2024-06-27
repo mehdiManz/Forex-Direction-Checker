@@ -1,0 +1,1 @@
+# Forex-Direction-Checker
